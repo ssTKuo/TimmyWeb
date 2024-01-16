@@ -1,0 +1,150 @@
+/* ***整個網站CSS的設定*** */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+p {
+  padding: 0.5rem 0rem;
+}
+.top {
+  color: bisque;
+}
+/* ***導覽列CSS*** */
+header div.top {
+  padding: 2rem;
+  background-image: url("./images/Ocean.jpg");
+  background-position: center;
+  background-size: cover;
+}
+header div.top h1 {
+  font-size: 2.8rem;
+}
+header div.top h3 {
+  font-size: 1.2rem;
+}
+header nav {
+  background-color: lightgreen;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header nav ul li {
+  padding: 0.8rem 1.2rem;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: all 0.5s;
+}
+header nav ul li a:hover {
+  color: brown;
+}
+/* ***以下為左'右CSS寫法*** */
+/* 如何左右編排？？ANS:使用flexcontainer */
+/* mian包含section left與right，故將main的display設為flex */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap: wrap 設定是希望於手機頁面時可自動排版 */
+}
+main section {
+  /* 原本字體皆貼齊網頁左右兩端，為了不要貼齊故設定padding */
+  padding: 1rem;
+}
+
+/* 接著設定flex的屬性 */
+/* 左右比例為1:4,左邊最少100PX,右邊最少500PX，如把網頁左右縮小，會發現換行的界線在於不足600的地方換行(100+500) */
+section.left {
+  flex: 1 1 100px;
+}
+section.left img {
+  width: 85%;
+}
+section.right {
+  flex: 4 1 600px;
+}
+section.right h3 {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+section figure img.Photo1 {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+section figure img.Photo2 {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+section.right ul {
+  margin: 1rem;
+}
+
+main.no-flex {
+  display: block;
+}
+
+main section div ul li {
+  margin-left: 1.5rem;
+}
+/* Course頁面設定 */
+.Coursecontent {
+  margin: 2.5rem;
+  border: 2px solid chartreuse;
+  padding: 0.5rem;
+}
+.Coursecontent h4 {
+  font-size: 1.5rem;
+  color: blueviolet;
+}
+.Coursecontent h5 {
+  font-size: 1.05rem;
+  color: red;
+}
+/* sellgood頁面設定 */
+.mainsellpage {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.mainsellpage section {
+  display: flex;
+}
+
+aside {
+  flex: 1;
+  border: 1px solid palegoldenrod;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-right: 10px; /* 增加間距用 */
+}
+
+.sellphoto {
+  max-width: 100%;
+  height: auto;
+}
+
+.sellphotocontent {
+  margin-top: 5px;
+  text-align: center;
+}
+@media screen and (max-width: 320px) {
+  header nav ul {
+    flex-direction: column;
+  }
+}
